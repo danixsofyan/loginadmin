@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 05, 2019 at 08:22 AM
+-- Generation Time: Aug 06, 2019 at 04:39 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -42,7 +42,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(1, 'Dani Sofyan', 'danixsofyan@gmail.com', 'profile.jpg', '$2y$10$Uq8YIPH9XJ5i3OYBOKaDK.FbDYAEIVEYSuvtXoG6HnVjFUyF0Cze6', 1, 1, 1563523827),
+(1, 'Dani Sofyan', 'danixsofyan@gmail.com', 'profile.jpg', '$2y$10$mRgjjv/AlvpNv4XXK6rxU.RY4Ec1okSEyfLzlAe924l.CdRsRTU22', 1, 1, 1563523827),
 (2, 'Disbudpar', 'jutawan@gmail.com', 'stunningbandung.jpg', '$2y$10$mRgjjv/AlvpNv4XXK6rxU.RY4Ec1okSEyfLzlAe924l.CdRsRTU22', 2, 1, 1563523827),
 (3, 'Museum Geologi', 'museumgeologi@gmail.com', 'default.jpg', '$2y$10$mRgjjv/AlvpNv4XXK6rxU.RY4Ec1okSEyfLzlAe924l.CdRsRTU22', 3, 1, 1563523827);
 
