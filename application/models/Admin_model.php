@@ -52,8 +52,11 @@ class Admin_model extends CI_Model
 	}
 
 	//delete
+	public function deleteRole($id){
+		$this->db->delete('user_role', ['id' => $id]);
+	}
+
 	public function deleteMenu($data){
 		$this->db->delete('user_access_menu', $data);
 	}
-
 }

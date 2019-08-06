@@ -49,5 +49,17 @@ class Menu_model extends CI_Model
     {
         $this->db->insert('user_sub_menu', $data);
     }
+
+    //edit
+	public function editSubMenu($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('user_sub_menu', $data);
+	}
+
+	//delete
+	public function deleteSubMenu($id){
+		$this->db->delete('user_sub_menu', ['id' => $id]);
+	}
     
 }

@@ -26,7 +26,7 @@
                         <td>
                             <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning"><i class="far fa-minus-square"></i> Akses Menu</a>
                             <a data-toggle="modal" data-target="#editRoleModal<?= $r['id']; ?>" class="badge badge-success text-white"><i class="far fa-edit"></i> Ubah</a>
-                            <a data-toggle="modal" data-target="" class="badge badge-danger text-white"><i class="far fa-trash-alt"></i> Hapus</a>
+                            <a onclick="return confirm('yakin menghapus data ?')" href="<?= base_url(); ?>admin/deleterole/<?= $r['id']; ?>" class="badge badge-danger text-white"><i class="far fa-trash-alt"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>

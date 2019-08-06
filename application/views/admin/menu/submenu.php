@@ -44,8 +44,8 @@
                         ?>
                         </td>
                         <td>
-                            <a href="" class="badge badge-success"><i class="far fa-edit"></i> Ubah</a>
-                            <a href="" class="badge badge-danger"><i class="far fa-trash-alt"></i> Hapus</a>
+                            <a data-toggle="modal" data-target="#editSubMenuModal<?= $sm['id']; ?>" class="badge badge-success text-white"><i class="far fa-edit"></i> Ubah</a>
+                            <a onclick="return confirm('yakin menghapus data ?')" href="<?= base_url(); ?>menu/deletesubmenu/<?= $sm['id']; ?>" class="badge badge-danger text-white"><i class="far fa-trash-alt"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -65,9 +65,7 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Modal -->
-
-<!-- Modal -->
+<!-- Modal Add Sub Menu-->
 <div class="modal fade" id="newSubMenuModal" tabindex="-1" role="dialog" aria-labelledby="newSubMenuModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -113,3 +111,61 @@
         </div>
     </div>
 </div> 
+
+<!-- Modal Edit Sub Menu-->
+<?php foreach ($subMenu as $sm) : ?>
+<div class="modal fade" id="editSubMenuModal<?= $sm['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editSubMenuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editSubMenuModalLabel">Ubah Submenu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('menu/editsubmenu'); ?>" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                    <input type="hidden" class="form-control" id="id" name="id" value="<?= $sm['id']; ?>">
+                        <input type="text" class="form-control" id="title" name="title" value="<?= $sm['title']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <select name="menu_id" id="menu_id" class="form-control">
+                        <option value="">Pilih Menu</option>
+                            <?php foreach( $menu as $m ) : ?>
+                                <?php if( $m['id'] == $sm['menu_id'] ) : ?>
+                                    <option value="<?= $m['id']; ?>" selected><?= $m['menu']; ?></option>
+                                <?php else : ?>
+                                    <option value="<?= $m['id']; ?>"><?= $m['menu']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="url" name="url" value="<?= $sm['url']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="icon" name="icon" value="<?= $sm['icon']; ?>">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="1" name="is_active" id="is_active" <?php 
+                            if($sm['is_active'] == 1){
+                                echo "checked";
+                            }
+                        ?>>
+                            <label class="form-check-label" for="is_active">
+                                Aktif?
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+                    <button type="submit" class="btn btn-primary">Ubah</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>

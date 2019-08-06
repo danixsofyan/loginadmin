@@ -68,4 +68,31 @@ class Menu extends CI_Controller
             redirect('menu/submenu');
         }
     }
+
+    public function editSubMenu()
+    {
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('menu_id', 'Menu', 'required');
+        $this->form_validation->set_rules('url', 'URL', 'required');
+        $this->form_validation->set_rules('icon', 'icon', 'required');
+
+        $data = [
+            'title' => $this->input->post('title'),
+            'menu_id' => $this->input->post('menu_id'),
+            'url' => $this->input->post('url'),
+            'icon' => $this->input->post('icon'),
+            'is_active' => $this->input->post('is_active')
+        ];
+        $id   = $this->input->post('id');
+        $this->Menu_model->editSubMenu($id, $data);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil diubah!</div>');
+        redirect('menu/submenu');
+    }
+
+    public function deleteSubMenu($id)
+    {
+        $this->Menu_model->deleteSubMenu($id);
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Berhasil dihapus!</div>');
+        redirect('menu/submenu');
+    }
 }
