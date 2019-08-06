@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 25, 2019 at 02:34 PM
--- Server version: 5.6.33
--- PHP Version: 7.0.12
+-- Generation Time: Aug 05, 2019 at 08:22 AM
+-- Server version: 5.7.25
+-- PHP Version: 7.3.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `wpu_login`
+-- Database: `loginadmin`
 --
 
 -- --------------------------------------------------------
@@ -42,9 +42,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(5, 'Sandhika Galih', 'sandhikagalih@unpas.ac.id', 'profile1.jpg', '$2y$10$nXnrqGQTjpvg58OtOB/N.evYQjVlz7KIW37oUSQSQ2EgNMD0Dgrzq', 1, 1, 1552120289),
-(6, 'Doddy Ferdiansyah', 'doddy@gmail.com', 'profile.jpg', '$2y$10$FhGzXwwTWLN/yonJpDLR0.nKoeWlKWBoRG9bsk0jOAgbJ007XzeFO', 2, 1, 1552285263),
-(11, 'Sandhika Galih', 'sandhikagalih@gmail.com', 'default.jpg', '$2y$10$0QYEK1pB2L.Rdo.ZQsJO5eeTSpdzT7PvHaEwsuEyGSs0J1Qf5BoSq', 2, 1, 1553151354);
+(1, 'Dani Sofyan', 'danixsofyan@gmail.com', 'profile.jpg', '$2y$10$Uq8YIPH9XJ5i3OYBOKaDK.FbDYAEIVEYSuvtXoG6HnVjFUyF0Cze6', 1, 1, 1563523827),
+(2, 'Disbudpar', 'jutawan@gmail.com', 'stunningbandung.jpg', '$2y$10$mRgjjv/AlvpNv4XXK6rxU.RY4Ec1okSEyfLzlAe924l.CdRsRTU22', 2, 1, 1563523827),
+(3, 'Museum Geologi', 'museumgeologi@gmail.com', 'default.jpg', '$2y$10$mRgjjv/AlvpNv4XXK6rxU.RY4Ec1okSEyfLzlAe924l.CdRsRTU22', 3, 1, 1563523827);
 
 -- --------------------------------------------------------
 
@@ -64,9 +64,17 @@ CREATE TABLE `user_access_menu` (
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (1, 1, 1),
-(3, 2, 2),
-(7, 1, 3),
-(8, 1, 2);
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4),
+(5, 1, 5),
+(6, 2, 1),
+(7, 2, 2),
+(8, 2, 3),
+(9, 2, 4),
+(10, 3, 1),
+(11, 3, 2),
+(12, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -85,8 +93,10 @@ CREATE TABLE `user_menu` (
 
 INSERT INTO `user_menu` (`id`, `menu`) VALUES
 (1, 'Admin'),
-(2, 'User'),
-(3, 'Menu');
+(2, 'Data'),
+(3, 'Profile'),
+(4, 'Menu'),
+(5, 'User');
 
 -- --------------------------------------------------------
 
@@ -104,8 +114,9 @@ CREATE TABLE `user_role` (
 --
 
 INSERT INTO `user_role` (`id`, `role`) VALUES
-(1, 'Administrator'),
-(2, 'Member');
+(1, 'Super Admin'),
+(2, 'Admin'),
+(3, 'Member');
 
 -- --------------------------------------------------------
 
@@ -128,12 +139,16 @@ CREATE TABLE `user_sub_menu` (
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active`) VALUES
 (1, 1, 'Dashboard', 'admin', 'fas fa-fw fa-tachometer-alt', 1),
-(2, 2, 'My Profile', 'user', 'fas fa-fw fa-user', 1),
-(3, 2, 'Edit Profile', 'user/edit', 'fas fa-fw fa-user-edit', 1),
-(4, 3, 'Menu Management', 'menu', 'fas fa-fw fa-folder', 1),
-(5, 3, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
-(7, 1, 'Role', 'admin/role', 'fas fa-fw fa-user-tie', 1),
-(8, 2, 'Change Password', 'user/changepassword', 'fas fa-fw fa-key', 1);
+(2, 3, 'Profil', 'profile', 'fas fa-fw fa-user', 1),
+(3, 3, 'Ubah Profil', 'profile/edit', 'fas fa-fw fa-user-edit', 1),
+(4, 4, 'Pengelolaan Menu', 'menu', 'fas fa-fw fa-folder', 1),
+(5, 4, 'Pengelolaan Submenu', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
+(7, 5, 'Daftar Pengguna', 'user', 'fas fa-fw fa-user-tie', 1),
+(8, 3, 'Ganti Password', 'profile/changepassword', 'fas fa-fw fa-key', 1),
+(9, 2, 'Data Pengunjung', 'data/pengunjung', 'fas fa-database', 1),
+(10, 5, 'Hak Akses', 'admin/role', 'fas fa-user', 1),
+(11, 2, 'Data Lokasi', 'data/lokasi', 'fas fa-map-marked-alt', 1),
+(12, 2, 'Laporan', 'data/laporan', 'fas fa-file', 1);
 
 -- --------------------------------------------------------
 
@@ -196,32 +211,38 @@ ALTER TABLE `user_token`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `user_menu`
 --
 ALTER TABLE `user_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
 -- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT for table `user_token`
 --
 ALTER TABLE `user_token`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
