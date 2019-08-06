@@ -20,7 +20,7 @@ class Profile extends CI_Controller
         $this->load->view('templates/admin/header', $data);
         $this->load->view('templates/admin/sidebar', $data);
         $this->load->view('templates/admin/topbar', $data);
-        $this->load->view('admin/user/index', $data);
+        $this->load->view('admin/profile/index', $data);
         $this->load->view('templates/admin/footer');
     }
 
@@ -36,7 +36,7 @@ class Profile extends CI_Controller
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('admin/user/edit', $data);
+            $this->load->view('admin/profile/edit', $data);
             $this->load->view('templates/admin/footer');
         } else {
             $name = $this->input->post('name');
@@ -84,7 +84,7 @@ class Profile extends CI_Controller
             $this->load->view('templates/admin/header', $data);
             $this->load->view('templates/admin/sidebar', $data);
             $this->load->view('templates/admin/topbar', $data);
-            $this->load->view('admin/user/changepassword', $data);
+            $this->load->view('admin/profile/changepassword', $data);
             $this->load->view('templates/admin/footer');
         } else {
             $current_password = $this->input->post('current_password');

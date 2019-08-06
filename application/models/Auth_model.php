@@ -32,6 +32,24 @@ class Auth_model extends CI_Model
 		$this->db->update('user');
 	}
 
+	public function editPengguna($id, $data)
+    {
+		$this->db->where('id', $id);
+		$this->db->update('user', $data);
+	}
+
+	public function aktif($id)
+    {
+		$this->db->where('id', $id);
+		$this->db->update('user', ['is_active' => 1]);
+	}
+
+	public function nonaktif($id)
+    {
+		$this->db->where('id', $id);
+		$this->db->update('user', ['is_active' => 0]);
+	}
+
 	public function editPassword($email, $password)
     {
         $this->db->set('password', $password);

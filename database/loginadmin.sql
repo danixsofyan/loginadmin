@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 06, 2019 at 04:39 AM
+-- Generation Time: Aug 06, 2019 at 07:21 AM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -146,7 +146,7 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (7, 5, 'Daftar Pengguna', 'user', 'fas fa-fw fa-user-tie', 1),
 (8, 3, 'Ganti Password', 'profile/changepassword', 'fas fa-fw fa-key', 1),
 (9, 2, 'Data Pengunjung', 'data/pengunjung', 'fas fa-database', 1),
-(10, 5, 'Hak Akses', 'admin/role', 'fas fa-user', 1),
+(10, 5, 'Hak Akses', 'user/role', 'fas fa-user', 1),
 (11, 2, 'Data Lokasi', 'data/lokasi', 'fas fa-map-marked-alt', 1),
 (12, 2, 'Laporan', 'data/laporan', 'fas fa-file', 1);
 

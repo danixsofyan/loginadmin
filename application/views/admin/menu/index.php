@@ -24,8 +24,8 @@
                         <th scope="row"><?= $i; ?></th>
                         <td><?= $m['menu']; ?></td>
                         <td>
-                            <a href="" class="badge badge-success"><i class="far fa-edit"></i> Ubah</a>
-                            <a href="" class="badge badge-danger"><i class="far fa-trash-alt"></i> Hapus</a>
+                            <a data-toggle="modal" data-target="#editMenuModal<?= $m['id']; ?>" class="badge badge-success text-white"><i class="far fa-edit"></i> Ubah</a>
+                            <a onclick="return confirm('yakin menghapus data?')" href="<?= base_url(); ?>menu/deletemenu/<?= $m['id']; ?>" class="badge badge-danger text-white"><i class="far fa-trash-alt"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -45,9 +45,7 @@
 </div>
 <!-- End of Main Content -->
 
-<!-- Modal -->
-
-<!-- Modal -->
+<!-- Modal Add Menu-->
 <div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -71,3 +69,31 @@
         </div>
     </div>
 </div> 
+
+<!-- Modal Edit Menu-->
+<?php foreach ($menu as $m) : ?>
+<div class="modal fade" id="editMenuModal<?= $m['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="editMenuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editMenuModalLabel">Edit Menu</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="<?= base_url('menu/editmenu'); ?>" method="post">
+                <div class="modal-body">
+                <input type="hidden" class="form-control" id="id" name="id" value="<?= $m['id']; ?>">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="menu" name="menu" placeholder="Nama Menu" value="<?= $m['menu']; ?>" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Keluar</button>
+                    <button type="submit" class="btn btn-primary">Ubah</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<?php endforeach; ?>

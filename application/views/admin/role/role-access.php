@@ -5,7 +5,7 @@
         <div class="col-lg-6">
 
             <?= $this->session->flashdata('message'); ?>
-            <p><a href="<?= base_url('admin/role'); ?>" class="badge badge-success"><i class="fas fa-arrow-left"></i> Kembali</a></p>
+            <p><a href="<?= base_url('user/role'); ?>" class="badge badge-success"><i class="fas fa-arrow-left"></i> Kembali</a></p>
             <h5>Hak Akses Anda : <?= $role['role']; ?></h5>
 
             <table class="table table-hover">

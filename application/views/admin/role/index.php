@@ -24,9 +24,9 @@
                         <th scope="row"><?= $i; ?></th>
                         <td><?= $r['role']; ?></td>
                         <td>
-                            <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning"><i class="far fa-minus-square"></i> Akses Menu</a>
+                            <a href="<?= base_url('user/roleaccess/') . $r['id']; ?>" class="badge badge-warning"><i class="fas fa-fw fa-folder"></i> Akses Menu</a>
                             <a data-toggle="modal" data-target="#editRoleModal<?= $r['id']; ?>" class="badge badge-success text-white"><i class="far fa-edit"></i> Ubah</a>
-                            <a onclick="return confirm('yakin menghapus data ?')" href="<?= base_url(); ?>admin/deleterole/<?= $r['id']; ?>" class="badge badge-danger text-white"><i class="far fa-trash-alt"></i> Hapus</a>
+                            <a onclick="return confirm('yakin menghapus data?')" href="<?= base_url(); ?>user/deleterole/<?= $r['id']; ?>" class="badge badge-danger text-white"><i class="far fa-trash-alt"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php $i++; ?>
@@ -47,8 +47,6 @@
 <!-- End of Main Content -->
 
 <!-- Modal -->
-
-<!-- Modal -->
 <div class="modal fade" id="newRoleModal" tabindex="-1" role="dialog" aria-labelledby="newRoleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -58,10 +56,10 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/role'); ?>" method="post">
+            <form action="<?= base_url('user/role'); ?>" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="role" name="role" placeholder="Nama Hak Akses">
+                        <input type="text" class="form-control" id="role" name="role" placeholder="Nama Hak Akses" required>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -84,11 +82,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('admin/editRole'); ?>" method="post">
+            <form action="<?= base_url('user/editRole'); ?>" method="post">
             <input type="hidden" class="form-control" id="id" name="id" value="<?= $r['id']; ?>">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="role" name="role" value="<?= $r['role']; ?>">
+                        <input type="text" class="form-control" id="role" name="role" placeholder="Nama Hak Akses" value="<?= $r['role']; ?>" required>
                     </div>
                 </div>
                 <div class="modal-footer">

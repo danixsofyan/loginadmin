@@ -2,7 +2,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Dinas Kebudayaan & Pariwisata Kota Bandung <?= date('Y'); ?> - Developed by <a href="http://digdaya.co">Digdaya</span>
+                        <span>Copyright &copy; <a href="http://digdaya.co">Digdaya <?= date('Y'); ?></span>
                     </div>
                 </div>
             </footer>
@@ -167,14 +167,14 @@
                     const roleId = $(this).data('role');
 
                     $.ajax({
-                        url: "<?= base_url('admin/changeaccess'); ?>",
+                        url: "<?= base_url('user/changeaccess'); ?>",
                         type: 'post',
                         data: {
                             menuId: menuId,
                             roleId: roleId
                         },
                         success: function() {
-                            document.location.href = "<?= base_url('admin/roleaccess/'); ?>" + roleId;
+                            document.location.href = "<?= base_url('user/roleaccess/'); ?>" + roleId;
                         }
                     });
 
