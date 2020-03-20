@@ -13,16 +13,16 @@ class Auth extends CI_Controller
     public function index()
     {
         if ($this->session->userdata('email')) {
-            redirect('admin');
+            redirect('form');
         }
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
-            $data['title'] = 'Login Page';
-            $this->load->view('templates/auth/header', $data);
-            $this->load->view('auth/login');
-            $this->load->view('templates/auth/footer');
+            $data['title'] = 'DCV 2020 - Login';
+            $this->load->view('auth/user/header', $data);
+            $this->load->view('auth/user/login');
+            $this->load->view('auth/user/footer');
         } else {
             // validasinya success
             $this->_login();
@@ -42,14 +42,15 @@ class Auth extends CI_Controller
                 // cek password
                 if (password_verify($password, $user['password'])) {
                     $data = [
+                        'id' => $user['id'],
                         'email' => $user['email'],
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
                     if ($user['role_id'] == 1) {
-                        redirect('admin');
+                        redirect('form');
                     } else {
-                        redirect('admin');
+                        redirect('form');
                     }
                 } else {
                     $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong password!</div>');
@@ -67,10 +68,13 @@ class Auth extends CI_Controller
 
     public function registration()
     {
+        $count['lastid']     = $this->Auth_model->selectId();
+        $last                = $count['lastid']['id'];
         if ($this->session->userdata('email')) {
             redirect('user');
         }
-        $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('firstname', 'First Name', 'required|trim');
+        $this->form_validation->set_rules('lastname', 'Last Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered!'
         ]);
@@ -82,19 +86,20 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'User Registration';
-            $this->load->view('templates/auth/header', $data);
-            $this->load->view('auth/registration');
-            $this->load->view('templates/auth/footer');
+            $this->load->view('auth/user/header', $data);
+            $this->load->view('auth/user/signup');
+            $this->load->view('auth/user/footer');
         } else {
             $email = $this->input->post('email', true);
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),
+                'firstname' => htmlspecialchars($this->input->post('firstname', true)),
+                'lastname' => htmlspecialchars($this->input->post('lastname', true)),
                 'email' => htmlspecialchars($email),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
                 'role_id' => 3,
                 'is_active' => 1,
-                'date_created' => time()
+                'date_created' => date("Y-m-d")
             ];
 
             // siapkan token
@@ -102,10 +107,31 @@ class Auth extends CI_Controller
             $user_token = [
                 'email' => $email,
                 'token' => $token,
-                'date_created' => time()
+                'date_created' => date("Y-m-d")
+            ];
+
+            
+
+            $datastartup = [
+                'idea_title'        => htmlspecialchars($this->input->post('firstname', true)),
+                'tahun_berdiri'     => "",
+                'domisili'          => "",
+                'alamat'            => "",
+                'alamat'            => "",
+                'jmlhfounder'       => "",
+                'jmlhpersonil'      => "",
+                'email'             => "",
+                'facebookstartup'   => "",
+                'twitterstartup'    => "",
+                'linkedinstartup'   => "",
+                'deskripsi'         => "",
+                'created_by'        => "SYSTEM",
+                'created_date'      => date("Y-m-d h:i:s"),
+                'id_socio'          => $last+1
             ];
 
             $this->Auth_model->addUser($data, $user_token);
+            $this->Auth_model->addStartup($datastartup);
 
             // $this->_sendEmail($token, 'verify');
 

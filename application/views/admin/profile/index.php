@@ -14,9 +14,9 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"><?= $user['name']; ?></h5>
+                    <h5 class="card-title"><?= $user['firstname']; ?> <?= $user['lastname']; ?></h5>
                     <p class="card-text"><?= $user['email']; ?></p>
-                    <p class="card-text"><small class="text-muted">Member since <?= date('d F Y', $user['date_created']); ?></small></p>
+                    <p class="card-text"><small class="text-muted">Member since <?= $user['date_created']; ?></small></p>
                     <p><a href="<?= base_url('profile/edit'); ?>" class="badge badge-success"><i class="far fa-edit"></i> Ubah Profil</a></p>
                 </div>
             </div>

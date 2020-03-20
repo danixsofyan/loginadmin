@@ -16,9 +16,9 @@ class Data extends CI_Controller
         $data['title'] = 'Menu Management';
     }
 
-    public function pengunjung()
+    public function startup()
     {
-        $data['title']  = 'Data Pengunjung';
+        $data['title']  = 'Data Startup';
         $email          = $this->session->userdata('email');        
         $data['user']   = $this->Admin_model->getUser($email);
 

@@ -12,6 +12,18 @@ class Auth_model extends CI_Model
 		return $this->db->get_where('user_token', ['token' => $token])->row_array();
 	}
 
+	// Select last id
+	public function selectId()
+    {
+        return $this->db->query("SELECT MAX(id) as id FROM user")->row_array();
+	}
+
+	//add startup
+    public function addStartup($datastartup)
+    {
+        $this->db->insert('socioide', $datastartup);
+    }
+
 	// add
     public function addUser($data, $user_token)
     {

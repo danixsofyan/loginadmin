@@ -14,7 +14,8 @@ class User extends CI_Controller
 
     public function index()
     {
-        $this->form_validation->set_rules('name', 'Name', 'required|trim');
+        $this->form_validation->set_rules('firstname', 'Name', 'required|trim');
+        $this->form_validation->set_rules('lastname', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email|is_unique[user.email]', [
             'is_unique' => 'This email has already registered!'
         ]);
@@ -40,7 +41,8 @@ class User extends CI_Controller
             $email      = $this->input->post('email', true);
             $is_active  = $this->input->post('is_active', true);
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),
+                'firstname' => htmlspecialchars($this->input->post('name', true)),
+                'lastname' => htmlspecialchars($this->input->post('name', true)),
                 'email' => htmlspecialchars($email),
                 'image' => 'default.jpg',
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
@@ -90,7 +92,8 @@ class User extends CI_Controller
             $email      = $this->input->post('email', true);
             $is_active  = $this->input->post('is_active', true);
             $data = [
-                'name' => htmlspecialchars($this->input->post('name', true)),
+                'firstname' => htmlspecialchars($this->input->post('name', true)),
+                'lastname' => htmlspecialchars($this->input->post('name', true)),
                 'email' => htmlspecialchars($email),
                 'image' => htmlspecialchars($this->input->post('image', true)),
                 'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),

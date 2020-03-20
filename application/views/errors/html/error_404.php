@@ -56,9 +56,9 @@ p {
 </head>
 <body>
   <div id="container">
-    <img src="/bandung/assets/error/img/404_icon.png">
+    <img src="/paddilo/assets/error/img/404_icon.png">
     <h1><?php echo $heading; ?></h1>
-    <p><?php echo $message; ?><a href="/loginadmin/">Return Home</a></p>
+    <p><?php echo $message; ?><a href="/paddilo/">Return Home</a></p>
   </div>
 </body>
 </html>

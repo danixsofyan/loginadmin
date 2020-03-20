@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>DiLo PAD</title>
+    <meta name="description" content="DiLo PAD" />
+    <meta name="author" content="danixsofyan | OIM 2020">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="http://dilo.id/img/favicon.png" type="image/x-icon">
+
+    <!-- Bootstrap Dropzone CSS -->
+    <link href="vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Dropzone CSS -->
+    <link href="vendors/dropify/dist/css/dropify.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- jquery-steps css -->
+    <link rel="stylesheet" href="vendors/jquery-steps/demo/css/jquery.steps.css">
+
+    <!-- Toggles CSS -->
+    <link href="vendors/jquery-toggles/css/toggles.css" rel="stylesheet" type="text/css">
+    <link href="vendors/jquery-toggles/css/themes/toggles-light.css" rel="stylesheet" type="text/css">
+
+    <!-- Daterangepicker CSS -->
+    <link href="vendors/daterangepicker/daterangepicker.css" rel="stylesheet" type="text/css" />
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+
+    <!-- HK Wrapper -->
+    <div class="hk-wrapper hk-alt-nav">
+
+        <!-- Top Navbar -->
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top hk-navbar hk-navbar-alt">
+            <a class="navbar-toggle-btn nav-link-hover navbar-toggler" href="javascript:void(0);" data-toggle="collapse"
+                data-target="#navbarCollapseAlt" aria-controls="navbarCollapseAlt" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="feather-icon"><i data-feather="menu"></i></span></a>
+            <a class="navbar-brand text-red" href="dashboard1.html">
+                DiLo PAD
+            </a>
+            <div class="collapse navbar-collapse" id="navbarCollapseAlt">
+            </div>
+            <ul class="navbar-nav hk-navbar-content">
+
+                <li class="nav-item dropdown dropdown-authentication">
+                    <a class="nav-link dropdown-toggle no-caret" href="#" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <div class="media">
+                            <div class="media-img-wrap">
+                                <div class="avatar">
+                                    <img src="dist/img/avatar.jpg" alt="user" class="avatar-img rounded-circle">
+                                </div>
+                                <span class="badge badge-success badge-indicator"></span>
+                            </div>
+                            <div class="media-body">
+                                <span>Dani Sofyan<i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" data-dropdown-in="flipInX"
+                        data-dropdown-out="flipOutX">
+                        <a class="dropdown-item" href="profile.html"><i
+                                class="dropdown-icon zmdi zmdi-account"></i><span>Profile</span></a>
+                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-card"></i><span>My
+                                balance</span></a>
+                        <a class="dropdown-item" href="inbox.html"><i
+                                class="dropdown-icon zmdi zmdi-email"></i><span>Inbox</span></a>
+                        <a class="dropdown-item" href="#"><i
+                                class="dropdown-icon zmdi zmdi-settings"></i><span>Settings</span></a>
+                        <div class="dropdown-divider"></div>
+                        <div class="sub-dropdown-menu show-on-hover">
+                            <a href="#" class="dropdown-toggle dropdown-item no-caret"><i
+                                    class="zmdi zmdi-check text-success"></i>Online</a>
+                            <div class="dropdown-menu open-left-side">
+                                <a class="dropdown-item" href="#"><i
+                                        class="dropdown-icon zmdi zmdi-check text-success"></i><span>Online</span></a>
+                                <a class="dropdown-item" href="#"><i
+                                        class="dropdown-icon zmdi zmdi-circle-o text-warning"></i><span>Busy</span></a>
+                                <a class="dropdown-item" href="#"><i
+                                        class="dropdown-icon zmdi zmdi-minus-circle-outline text-danger"></i><span>Offline</span></a>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="dropdown-icon zmdi zmdi-power"></i><span>Log
+                                out</span></a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- /Top Navbar -->
+
+
+
+
+
+        <!-- Main Content -->
+        <div class="hk-pg-wrapper">
+            <!-- Breadcrumb -->
+            <nav class="hk-breadcrumb" aria-label="breadcrumb">
+                <br>
+            </nav>
+            <!-- /Breadcrumb -->
+
+            <!-- Container -->
+            <div class="container">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div id="example-basic">
+                            <h3>
+                                <span class="wizard-icon-wrap"><i class="ion ion-md-person"></i></span>
+                                <span class="wizard-head-text-wrap">
+                                    <span class="step-head">Data Pribadi</span>
+                                </span>
+                            </h3>
+                            <section>
+                                <h3 class="display-5 mb-40">Keamanan data yang telah diisi akan dirahasiakan</h3>
+                                <div class="row">
+                                    <div class="col-xl-4 mb-20">
+                                        <p class="mb-10">Lengkapi data dirimu Donec at sapien aliquet nulla vulputate
+                                            posuere. Ut sagittis nisl non tristique consectetur. Nullam et est orci.</p>
+                                        <p><a href="#">Ubique veritus mediocrem</a> Aliquam luctus viverra enim, ut
+                                            dapibus nunc condimentum tempor.</p>
+                                        <div class="card mt-30">
+                                            <div class="card-body bg-light">
+                                                <h5 class="card-title">Madalyn Shane</h5>
+                                                <p class="card-text">1234 Main St xyz, Sacremento, 12 Riverside Drive
+                                                    Redding, Union Street, CA-961001, US</p>
+                                                <a href="#" class="btn btn-block btn-danger">Deliver here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 mb-20">
+                                        <form>
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <label for="firstName">Nama Depan</label>
+                                                    <input class="form-control" id="firstName"
+                                                        placeholder="Nama depan anda." type="text" name="namadpn">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <label for="lastName">Nama Belakang</label>
+                                                    <input class="form-control" id="lastName"
+                                                        placeholder="Nama belakang anda." type="text" name="namablkg">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">Email</label>
+                                                <input class="form-control" id="email" placeholder="anda@contoh.com"
+                                                    type="email" name="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tempatlahir">Tempat Lahir</label>
+                                                <input class="form-control" id="tempatlahir"
+                                                    placeholder="Masukkan tempat lahir anda." type="text"
+                                                    name="tempatlahir">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tgllahir">Tanggal Lahir</label>
+                                                <input class="form-control" type="text" name="birthday"
+                                                    value="01/01/1990" name="tgllahir" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="noidentitas">No Identitas</label>
+                                                <input class="form-control" id="noidentitas" placeholder="NIK / No SIM"
+                                                    type="text" name="noidentitas">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alamat">Alamat</label>
+                                                <textarea class="form-control" id="alamat" rows="3"
+                                                    name="alamat"></textarea>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-10">
+                                                    <label for="country">Provinsi</label>
+                                                    <select class="form-control custom-select d-block w-100"
+                                                        id="country">
+                                                        <option value="">Pilih provinsi</option>
+                                                        <option selected>United States</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 mb-10">
+                                                    <label for="state">Kota</label>
+                                                    <select class="form-control custom-select d-block w-100" id="state">
+                                                        <option value="">Pilih Kota</option>
+                                                        <option selected>California</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pekerjaan">Pekerjaan</label>
+                                                <input class="form-control" id="pekerjaan"
+                                                    placeholder="Informasi pekerjaan anda." type="text"
+                                                    name="pekerjaan">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pendidikan">Jenjang Pendidikan</label>
+                                                <input class="form-control" id="pendidikan"
+                                                    placeholder="Masukkan jenjang pendidikan anda (SD/SMP/SMA/S1/S2/S3)."
+                                                    type="text" name="pendidikan">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="jabatan">Jabatan Pekerjaan</label>
+                                                <input class="form-control" id="jabatan"
+                                                    placeholder="Masukkan jabatan pekerjaan anda." type="text"
+                                                    name="jabatan">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="perusahaan">Perusahaan</label>
+                                                <input class="form-control" id="perusahaan"
+                                                    placeholder="Perusahaan anda bekerja sekarang." type="text"
+                                                    name="perusahaan">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-10">
+                                                    <label for="nohp">Nomor Handphone</label>
+                                                    <input class="form-control" id="nohp"
+                                                        placeholder="Nomor handphone anda yang aktif saat ini."
+                                                        type="text" name="nohp">
+                                                </div>
+                                                <div class="col-md-6 mb-10">
+                                                    <label for="normh">No. Telepon Rumah</label>
+                                                    <input class="form-control" id="normh"
+                                                        placeholder="Nomor telepon rumah anda" type="text" name="normh">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-10">
+                                                    <label for="facebook">Facebook</label>
+                                                    <input class="form-control" id="facebook"
+                                                        placeholder="Akun Facebook anda." type="text" name="facebook">
+                                                    <p>Format: http://facebook.com/your-facebook-id</p>
+                                                </div>
+                                                <div class="col-md-6 mb-10">
+                                                    <label for="twitter">Twitter</label>
+                                                    <input class="form-control" id="twitter"
+                                                        placeholder="Akun Twitter anda." type="text" name="twitter">
+                                                    <p>Format: http://twitter.com/yourtwitter</p>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <h3>
+                                <span class="wizard-icon-wrap"><i class="ion ion-md-rocket"></i></span>
+                                <span class="wizard-head-text-wrap">
+                                    <span class="step-head">DATA STARTUP</span>
+                                </span>
+                            </h3>
+                            <section>
+                                <h3 class="display-5 mb-40">MANAGE STARTUP MU</h3>
+                                <div class="row">
+                                    <div class="col-xl-4 mb-20">
+                                        <p class="mb-10">Raih banyak kesempatan untuk berkembang Donec at sapien aliquet
+                                            nulla vulputate posuere. Ut sagittis nisl non tristique consectetur. Nullam
+                                            et est orci.</p>
+                                        <p><a href="#">Ubique veritus mediocrem</a> Aliquam luctus viverra enim, ut
+                                            dapibus nunc condimentum tempor.</p>
+                                        <div class="card mt-30">
+                                            <div class="card-body bg-light">
+                                                <h5 class="card-title">Madalyn Shane</h5>
+                                                <p class="card-text">1234 Main St xyz, Sacremento, 12 Riverside Drive
+                                                    Redding, Union Street, CA-961001, US</p>
+                                                <a href="#" class="btn btn-block btn-danger">Deliver here</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-8 mb-20">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="namastartup">Nama Startup</label>
+                                                <input class="form-control" id="namastartup"
+                                                    placeholder="Nama startup kamu" type="text" name="namastartup">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namastartup">Logo Startup</label>
+                                                <form action="#" class="dropzone" id="remove_link">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="thnberdiri">Tahun Berdiri Team</label>
+                                                <input class="form-control" id="thnberdiri"
+                                                    placeholder="isi dengan tahun dibentuknya startup." type="text"
+                                                    name="thnberdiri">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="domisilistartup">Kota Domisili Startup</label>
+                                                <input class="form-control" id="domisilistartup"
+                                                    placeholder="isi lokasi kota startup kamu. misalnya: Jakarta Pusat"
+                                                    type="text" name="domisilistartup">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="alamat">Alamat Lengkap Startup</label>
+                                                <textarea class="form-control" id="alamat" rows="3"
+                                                    name="alamat lengkap startup."></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="bidang usaha">Bidang Usaha Spesifik</label>
+                                                <select class="form-control custom-select d-block w-100" id="country">
+                                                    <option value="">Pilih bidang bisnis startup</option>
+                                                    <option selected>Big Data</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="jmlhfounder">Jumlah Founder & Co Founder</label>
+                                                <input class="form-control" id="jmlhfounder"
+                                                    placeholder="Jumlah Founder & Co Founder" type="text"
+                                                    name="jmlhfounder">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="jmlhpersonil">Jumlah Personil diluar Co Founder</label>
+                                                <input class="form-control" id="jmlhpersonil"
+                                                    placeholder="Jumlah Pegawai dan / atau Outsource" type="text"
+                                                    name="jmlhpersonil">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="emailstartup">Alamat Email</label>
+                                                <input class="form-control" id="emailstartup"
+                                                    placeholder="silahkan isi alamat email startup." type="email"
+                                                    name="emailstartup">
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 mb-10">
+                                                    <label for="facebookstartup">Facebook</label>
+                                                    <input class="form-control" id="facebookstartup"
+                                                        placeholder="Akun Facebook anda." type="text"
+                                                        name="facebookstartup">
+                                                </div>
+                                                <div class="col-md-4 mb-10">
+                                                    <label for="twitterstartup">Twitter</label>
+                                                    <input class="form-control" id="twitter"
+                                                        placeholder="Akun Twitter anda." type="text"
+                                                        name="twitterstartup">
+                                                </div>
+                                                <div class="col-md-4 mb-10">
+                                                    <label for="linkedinstartup">ID Linkedin</label>
+                                                    <input class="form-control" id="linkedinstartup"
+                                                        placeholder="Akun Twitter anda." type="text"
+                                                        name="linkedinstartup">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="decsstartup">Deskripsi Startup</label>
+                                                <textarea class="form-control" id="decsstartup" rows="3"
+                                                    name="decsstartup"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <h3>
+                                <span class="wizard-icon-wrap"><i class="ion ion-md-card"></i></span>
+                                <span class="wizard-head-text-wrap">
+                                    <span class="step-head">PRODUK</span>
+                                </span>
+                            </h3>
+                            <section>
+                                <h3 class="display-5 mb-40">PRODUK STARTUP MU</h3>
+                                <div class="row">
+                                    <div class="col-xl-5 mb-20">
+                                        <p>The most common alternative payment methods are debit cards, charge cards,
+                                            prepaid cards, direct debit, bank transfers, phone and mobile payments,
+                                            checks, money orders and cash payments.</p>
+                                    </div>
+                                    <div class="col-xl-7 mb-20">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="namaproduk">Nama Produk</label>
+                                                <input class="form-control" id="namaproduk"
+                                                    placeholder="Nama produk kamu" type="text" name="namaproduk">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namastartup">Logo Produk</label>
+                                                <form action="#" class="dropzone" id="remove_link">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="url">URL website produk kamu</label>
+                                                <input class="form-control" id="url"
+                                                    placeholder="Isi alamat web produk kamu" type="text" name="url">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="descproduk">Deskripsi singkat produk beserta
+                                                    fiturnya</label>
+                                                <textarea class="form-control" id="descproduk" rows="3"
+                                                    name="descproduk"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="bidang usaha">Kategori</label>
+                                                <select class="form-control custom-select d-block w-100" id="country">
+                                                    <option value="">Pilih bidang bisnis startup</option>
+                                                    <option selected>Big Data</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <h3>
+                                <span class="wizard-icon-wrap"><i
+                                        class="ion ion-md-checkmark-circle-outline"></i></span>
+                                <span class="wizard-head-text-wrap">
+                                    <span class="step-head">Proposal</span>
+                                </span>
+                            </h3>
+                            <section>
+                                <h3 class="display-5 mb-40">FORM PROPOSAL</h3>
+                                <div class="row">
+                                    <div class="col-xl-5 mb-20">
+                                        <p>The most common alternative payment methods are debit cards, charge cards,
+                                            prepaid cards, direct debit, bank transfers, phone and mobile payments,
+                                            checks, money orders and cash payments.</p>
+                                    </div>
+                                    <div class="col-xl-7 mb-20">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="namaproduk">Siapa calon konsumen atau calon pengguna produk
+                                                    anda?</label>
+                                                <textarea class="form-control" id="namaproduk" rows="3"
+                                                    name="namaproduk"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="masalahkonsumen">Apa permasalahan calon kunsumen atau calon
+                                                    pengguna yang dipecahkan oleh produk Anda?</label>
+                                                <textarea class="form-control" id="masalahkonsumen" rows="3"
+                                                    name="masalahkonsumen"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="jmlhkonsumen">Berapa jumlah calon konsumen dan user yang
+                                                    anda interview?</label>
+                                                <textarea class="form-control" id="jmlhkonsumen" rows="3"
+                                                    name="jmlhkonsumen"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ukpasar">Berapa besar ukuran pasar produk Anda?</label>
+                                                <textarea class="form-control" id="ukpasar" rows="3"
+                                                    name="ukpasar"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="uniqevalue">Jelaskan unique value yang Anda tawarkan kepada
+                                                    calon pengguna produk Anda?</label>
+                                                <textarea class="form-control" id="uniqevalue" rows="3"
+                                                    name="uniqevalue"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="unfair">Apa unfair advantage (aspek yang tidak mudah ditiru
+                                                    pihak lain) dari produk yang Anda kembangkan?</label>
+                                                <textarea class="form-control" id="unfair" rows="3"
+                                                    name="unfair"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ujicoba">Apakah produk Anda pernah diujicoba atau
+                                                    diimplementasikan sebelumnya?</label>
+                                                <textarea class="form-control" id="ujicoba" rows="3"
+                                                    name="ujicoba"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pernahujicoba">Jika pernah, bagaimana respon pengguna?
+                                                    Dapatkah memecahkan masalah mereka?</label>
+                                                <textarea class="form-control" id="pernahujicoba" rows="3"
+                                                    name="pernahujicoba"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="biaya">Jelaskan struktur biaya pengembangan produk
+                                                    Anda</label>
+                                                <textarea class="form-control" id="biaya" rows="3"
+                                                    name="biaya"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="delchan">Delivery channel apa yang akan Anda
+                                                    gunakan?</label>
+                                                <textarea class="form-control" id="delchan" rows="3"
+                                                    name="delchan"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ukproduk">Parameter apa yang akan Anda gunakan untuk
+                                                    mengukur keberhasilan produk / service yang Anda kembangkan?</label>
+                                                <textarea class="form-control" id="ukproduk" rows="3"
+                                                    name="ukproduk"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="capaianvalue">Bagaimana pencapaian value yang sudah diterima
+                                                    oleh customer?</label>
+                                                <textarea class="form-control" id="capaianvalue" rows="3"
+                                                    name="capaianvalue"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="kompetitor">Sebutkan Kompetitor Anda</label>
+                                                <textarea class="form-control" id="kompetitor" rows="3"
+                                                    name="kompetitor"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="positioning">Bagaimana positioning produk Anda terhadap
+                                                    kompetitor?</label>
+                                                <textarea class="form-control" id="positioning" rows="3"
+                                                    name="positioning"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="teknologi">Apa keunggulan teknologi Anda dibanding dengan
+                                                    kompetitor?</label>
+                                                <textarea class="form-control" id="teknologi" rows="3"
+                                                    name="teknologi"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="non-teknologi">Apa keunggulan non-teknologi Anda dibanding
+                                                    dengan kompetitor (misalnya model bisnis, strategic/eksklusif
+                                                    partner)?</label>
+                                                <textarea class="form-control" id="non-teknologi" rows="3"
+                                                    name="non-teknologi"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="revenue">Apabila sudah memiliki traction maupun revenue,
+                                                    jelaskan secara detail</label>
+                                                <textarea class="form-control" id="revenue" rows="3"
+                                                    name="revenue"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pendanaan">Apabila sudah mempunyai pendanaan, berapa besar
+                                                    nilainya? Dan dari mana sumbernya? </label>
+                                                <textarea class="form-control" id="pendanaan" rows="3"
+                                                    name="decsstartup"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="investor">Apakah pihak investor/penyandang dana tidak
+                                                    keberatan apabila Anda ikut serta dalam Program Inkubasi dan
+                                                    Akselerasi Indigo Creative Nation?</label>
+                                                <textarea class="form-control" id="v" rows="3"
+                                                    name="investor"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="badanusaha">Apakah startup Anda sudah berbentuk badan usaha?
+                                                </label>
+                                                <textarea class="form-control" id="badanusaha" rows="3"
+                                                    name="badanusaha"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="saham"> Jika sudah, Siapa saja pemegang saham Perusahaan
+                                                    Anda dan berapa besar kepemilikannya?
+                                                    Jika belum, Bagaimana rencana persentase kepemilikan saham
+                                                    perusahaan antara Founder/Co- Founder/Orang lain?</label>
+                                                <textarea class="form-control" id="saham" rows="3"
+                                                    name="decsstartvup"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="saham"> Apa yang Anda harapkan dengan mengikuti program
+                                                    Indigo Creative Nation ini?</label>
+                                                <textarea class="form-control" id="saham" rows="3"
+                                                    name="decsstartvup"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namastartup">Slide Pitch Deck</label>
+                                                <form action="#" class="dropzone" id="remove_link">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+                                                </form>
+                                                <p>Wajib mengandung informasi dari pertanyaan di form proposal ini (max
+                                                    5 MB)</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namastartup">Gambar Mockup Produk</label>
+                                                <form action="#" class="dropzone" id="remove_link">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+                                                </form>
+                                                <p>Upload file gambar, yang yang menceritakan tentang produk kamu.
+                                                    (Maks. 2MB)</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namastartup">Peta Kompetisi</label>
+                                                <form action="#" class="dropzone" id="remove_link">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+                                                </form>
+                                                <p>(max 5 MB)</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="videoprofile">Video Profil Tim dan Ide</label>
+                                                <input class="form-control" id="videoprofile"
+                                                    placeholder="Video Profil Tim dan Ide" type="text"
+                                                    name="videoprofile">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="namastartup">Data pendukung lainnya</label>
+                                                <form action="#" class="dropzone" id="remove_link">
+                                                    <div class="fallback">
+                                                        <input name="file" type="file" multiple />
+                                                    </div>
+                                                </form>
+                                                <p>(Capital Table, Term Sheet dengan investor sebelumnya, Profit Loss
+                                                    report, Balance Sheet report, etc.) (max 5 MB)</p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Row -->
+            </div>
+            <!-- /Container -->
+
+            <!-- Footer -->
+            <div class="hk-footer-wrap container">
+                <footer class="footer">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <p>Copyright © DiLo 2020</p>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p class="d-inline-block">Follow us</p>
+                            <a href="#"
+                                class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
+                                    class="btn-icon-wrap"><i class="fa fa-facebook"></i></span></a>
+                            <a href="#"
+                                class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
+                                    class="btn-icon-wrap"><i class="fa fa-twitter"></i></span></a>
+                            <a href="#"
+                                class="d-inline-block btn btn-icon btn-icon-only btn-indigo btn-icon-style-4"><span
+                                    class="btn-icon-wrap"><i class="fa fa-instagram"></i></span></a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- /Footer -->
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+    <!-- /HK Wrapper -->
+
+    <!-- jQuery -->
+    <script src="vendors/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap Dropzone CSS -->
+    <link href="vendors/dropzone/dist/dropzone.css" rel="stylesheet" type="text/css" />
+
+    <!-- Bootstrap Dropzone CSS -->
+    <link href="vendors/dropify/dist/css/dropify.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Jasny-bootstrap  JavaScript -->
+    <script src="vendors/jasny-bootstrap/dist/js/jasny-bootstrap.min.js"></script>
+
+    <!-- Bootstrap Input spinner JavaScript -->
+    <script src="vendors/bootstrap-input-spinner/src/bootstrap-input-spinner.js"></script>
+
+    <!-- Form Wizard JavaScript -->
+    <script src="vendors/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="dist/js/form-wizard-data.js"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="dist/js/jquery.slimscroll.js"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="dist/js/dropdown-bootstrap-extended.js"></script>
+
+    <!-- FeatherIcons JavaScript -->
+    <script src="dist/js/feather.min.js"></script>
+
+    <!-- Toggles JavaScript -->
+    <script src="vendors/jquery-toggles/toggles.min.js"></script>
+    <script src="dist/js/toggle-data.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="dist/css/style.css" rel="stylesheet" type="text/css">
+
+    <!-- Init JavaScript -->
+    <script src="dist/js/init.js"></script>
+
+    <!-- Daterangepicker JavaScript -->
+    <script src="vendors/moment/min/moment.min.js"></script>
+    <script src="vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="dist/js/daterangepicker-data.js"></script>
+
+    <!-- Dropzone JavaScript -->
+    <script src="vendors/dropzone/dist/dropzone.js"></script>
+
+    <!-- Dropify JavaScript -->
+    <script src="vendors/dropify/dist/js/dropify.min.js"></script>
+
+    <!-- Form Flie Upload Data JavaScript -->
+    <script src="dist/js/form-file-upload-data.js"></script>
+
+
+</body>
+
+</html>

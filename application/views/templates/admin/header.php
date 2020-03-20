@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Admin Digdaya">
-    <meta name="author" content="danixsofyan | Digdaya 2019">
+    <meta name="author" content="danixsofyan | Digdaya 2020">
 
     <title><?= $title; ?></title>
     
     <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/admin/'); ?>img/fevicon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="http://dilo.id/img/favicon.png">
 
     <!-- Custom fonts for this template -->
     <link href="<?= base_url('assets/admin/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
